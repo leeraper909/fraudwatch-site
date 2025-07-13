@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trust DNA Generator | FraudWatch</title>
+<style>
+  body { font-family: sans-serif; background: #f0f4f8; text-align: center; padding: 2rem; }
+  h1 { color: #0f62fe; }
+  input { padding: 0.75rem; width: 300px; margin: 1rem 0; border-radius: 5px; border: 1px solid #ccc; }
+  button { padding: 0.75rem 1.5rem; background: #0f62fe; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+  .output { margin-top: 2rem; background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: fit-content; margin-left: auto; margin-right: auto; }
+  code { word-break: break-all; display: block; font-family: monospace; font-size: 0.9rem; color: #222; }
+</style>
+</head>
+<body>
+  <h1>🧬 Trust DNA Generator</h1>
+  <p>Enter your name and email (optional) to receive a unique, timestamped Trust Imprint for your identity. This can be used in future BlackGrid-verifiable systems.</p>
+  <input id="name" placeholder="Your Name" />
+  <input id="email" placeholder="you@example.com (optional)" />
+  <br><button onclick="generateDNA()">Generate Trust DNA</button>
+  <div class="output" id="dnaBox" style="display:none">
+    <h3>Your Trust DNA Imprint</h3>
+    <code id="dna"></code>
+  </div>
+  <script>
+    function generateDNA() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if (!name) return alert("Please enter your name");
+      const raw = `${name}-${email}-${Date.now()}`;
+      const hash = btoa(raw).slice(0, 32) + '...' + btoa(raw).slice(-10);
+      document.getElementById('dna').innerText = hash;
+      document.getElementById('dnaBox').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
