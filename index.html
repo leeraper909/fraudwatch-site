@@ -2,135 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FraudWatch by BlackGrid</title>
-  <style>
-    body { font-family: sans-serif; margin: 0; background: #f9f9f9; color: #111; }
-    section { padding: 2rem; max-width: 960px; margin: auto; }
-    header, footer { background: #0f62fe; color: white; text-align: center; padding: 2rem; }
-    h1 { margin-top: 0; }
-    .box { background: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    .map { background: #dfe6ed; height: 300px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 8px; }
-    .counter { font-size: 2rem; font-weight: bold; color: green; }
-    .ping { margin-top: 1rem; font-weight: bold; }
-    code { background: #eee; padding: 1rem; display: block; margin-top: 1rem; border-radius: 6px; }
-  </style>
 </head>
 <body>
-
-<header>
-  <h1>FraudWatch by BlackGrid</h1>
-  <p>Protecting the nation from fraud. Powered by Quantum Mesh Defence.</p>
-</header>
-
-<section class="box">
-  <h2>🎓 Trust Ladder Quiz</h2>
-  <p>Complete this to earn your Fraud Defender Certificate.</p>
-  <div id="quiz"></div>
-</section>
-
-<section class="box">
-  <h2>🗣️ Scam Reporter & Trust Score</h2>
-  <label for="scam">Type of Scam:</label>
-  <select id="scam"><option>Text</option><option>Email</option><option>Phone</option><option>Website</option></select><br />
-  <textarea id="details" rows="3" placeholder="Describe what happened..."></textarea><br />
-  <button onclick="document.getElementById('reported').style.display='block'">Submit</button>
-  <div id="reported" style="display:none;margin-top:1rem;color:green;">✅ Scam report submitted.</div>
-  <p><button onclick="trustScore()">Check Trust Score</button></p>
-  <div id="score"></div>
-</section>
-
-<section class="box">
-  <h2>📚 Intercept Archive</h2>
+  <h1>FraudWatch Homepage</h1>
+  <p>Protecting the nation from fraud. Powered by BlackGrid Quantum Mesh Defence.</p>
   <ul>
-    <li>NHS test spoof – Intercepted by GeoCamouflage Detection</li>
-    <li>Crypto Solana drop – Blocked by TrustMesh Drift</li>
-    <li>Council tax refund scam – Detected by CloneTrap™ Layer</li>
+    <li><a href="trust_ladder_learning_engine.html">Trust Ladder Quiz</a></li>
+    <li><a href="fraudwatch_console.html">Report a Scam / Trust Score</a></li>
   </ul>
-</section>
-
-<section class="box">
-  <h2>🎖️ Get Your Fraud Defender Certificate</h2>
-  <input id="certName" placeholder="Your Name" />
-  <button onclick="generateCert()">Generate</button>
-  <div id="certResult" style="display:none;margin-top:1rem;"></div>
-</section>
-
-<section class="box">
-  <h2>🌍 Live Intercept Map</h2>
-  <div class="map">[ UK Fraud Signal Map Placeholder ]</div>
-  <div class="ping" id="mapPing">🚨 NHS login spoof blocked in Leeds</div>
-</section>
-
-<section class="box">
-  <h2>💷 Public Savings Counter</h2>
-  <div class="counter" id="savings">£47,000,000,000</div>
-</section>
-
-<section class="box">
-  <h2>🛡️ CloneProof Trust Badge</h2>
-  <img src="https://leeraper909.github.io/fraudwatch-site/cloneproof-badge.svg" alt="CloneProof Badge" width="150" />
-  <code>
-    &lt;a href="https://blackgridiq.co.uk" target="_blank"&gt;<br />
-    &nbsp;&nbsp;&lt;img src="https://leeraper909.github.io/fraudwatch-site/cloneproof-badge.svg" alt="BlackGrid CloneProof Badge" /&gt;<br />
-    &lt;/a&gt;
-  </code>
-</section>
-
-<footer>
-  &copy; 2025 BlackGrid. All rights reserved. Quantum Mesh Public Trust Layer.
-</footer>
-
-<script>
-  const questions = [
-    { q: "You get a refund text asking for your bank details. What should you do?", a: ["Click it", "Ignore or verify on the official site", "Reply asking who it is"], c: 1 },
-    { q: "A caller says they're from your bank and ask you to transfer money. Red flag?", a: ["No", "Yes"], c: 1 }
-  ];
-  let qIndex = 0, score = 0;
-  function showQuiz() {
-    const q = questions[qIndex];
-    let html = `<p>${q.q}</p>`;
-    q.a.forEach((a, i) => {
-      html += `<button onclick="answer(${i})">${a}</button><br/>`;
-    });
-    document.getElementById("quiz").innerHTML = html;
-  }
-  function answer(i) {
-    if (i === questions[qIndex].c) score++;
-    qIndex++;
-    if (qIndex < questions.length) showQuiz();
-    else document.getElementById("quiz").innerHTML = `<p>Quiz complete. Score: ${score}/${questions.length}</p>`;
-  }
-  showQuiz();
-
-  function trustScore() {
-    const s = Math.floor(Math.random() * 40 + 60);
-    document.getElementById("score").innerText = `Your Trust Score: ${s}/100`;
-  }
-
-  function generateCert() {
-    const name = document.getElementById("certName").value;
-    if (!name) return alert("Enter your name");
-    document.getElementById("certResult").style.display = "block";
-    document.getElementById("certResult").innerHTML = `<p>This certifies that <strong>${name}</strong> has completed the FraudWatch public trust challenge.</p>`;
-  }
-
-  let amount = 47000000000;
-  function updateSavings() {
-    amount += Math.floor(Math.random() * 5000 + 1000);
-    document.getElementById("savings").innerText = "£" + amount.toLocaleString();
-  }
-  setInterval(updateSavings, 3000);
-
-  const pings = [
-    "🚨 TrustOS™ blocked spoof in Leeds",
-    "🛡️ CloneTrap™ intercepted claim in Manchester",
-    "⚠️ Fake crypto drop stopped in Glasgow"
-  ];
-  setInterval(() => {
-    const msg = pings[Math.floor(Math.random() * pings.length)];
-    document.getElementById("mapPing").innerText = msg;
-  }, 8000);
-</script>
 </body>
 </html>
