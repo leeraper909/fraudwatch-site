@@ -1,152 +1,140 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FraudWatch by BlackGrid</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FraudWatch Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
+      font-family: 'Rajdhani', sans-serif;
+      background: #0e0e0e;
+      color: #e0e0e0;
     }
     header {
-      background: #020617;
+      background: #000;
       padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid #38bdf8;
+      border-bottom: 2px solid #444;
     }
     header h1 {
-      font-size: 1.75rem;
-      color: #38bdf8;
+      color: #00fff7;
+      font-size: 2rem;
     }
     nav a {
-      margin-left: 1rem;
-      color: #94a3b8;
+      color: #ccc;
+      margin-left: 1.5rem;
       text-decoration: none;
-      font-weight: bold;
     }
     nav a:hover {
-      color: #38bdf8;
-    }
-    .hero {
-      padding: 4rem 2rem;
-      text-align: center;
-      background: linear-gradient(to right, #0ea5e9, #1e3a8a);
-    }
-    .hero h2 {
-      font-size: 2.75rem;
-      color: white;
-      font-weight: 900;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 1rem;
-      color: #cbd5e1;
+      color: #00fff7;
     }
     .container {
+      max-width: 1000px;
+      margin: 3rem auto;
       padding: 2rem;
-      max-width: 1100px;
-      margin: auto;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    .card {
-      background: #1e293b;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    }
-    .card h3 {
-      color: #38bdf8;
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-    }
-    .card p {
-      font-size: 0.95rem;
-      color: #cbd5e1;
-    }
-    .card a {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #0ea5e9;
-      color: white;
-      text-decoration: none;
-      padding: 0.5rem 1.2rem;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    footer {
+    h2 {
       text-align: center;
-      background: #020617;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #64748b;
+      font-size: 2.5rem;
+      color: #00fff7;
+    }
+    .level-block {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .level-block h3 {
+      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      color: #00fff7;
+    }
+    .sub-tier-list a {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #ccc;
+      text-decoration: none;
+    }
+    .sub-tier-list a:hover {
+      color: #00fff7;
+    }
+    .back-home {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .back-home a {
+      color: #00fff7;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>FraudWatch by BlackGrid</h1>
+    <h1>FraudWatch</h1>
     <nav>
-      <a href="clone-detection.html">Clone Grid</a>
-      <a href="dark-web-scanner.html">Signals</a>
-      <a href="trust-certificate.html">Certificate</a>
-      <a href="partner-wall.html">Honour Wall</a>
+      <a href="/">Home</a>
+      <a href="/signup">Signup</a>
+      <a href="/cert-mint">Certificates</a>
     </nav>
   </header>
 
-  <div class="hero">
-    <h2>Protecting the Nation from Fraud</h2>
-    <p>Powered by BlackGrid Quantum Mesh Defence. Always watching. Always learning. Never sleeping.</p>
-  </div>
-
   <div class="container">
-    <div class="grid">
-      <div class="card">
-        <h3>🎓 Trust Ladder Quiz</h3>
-        <p>Complete this to earn your Fraud Defender Certificate.</p>
-        <a href="trust_ladder_learning_engine.html">Start Quiz</a>
-      </div>
-      <div class="card">
-        <h3>🗣️ Scam Reporter</h3>
-        <p>Submit suspicious messages or scams for real-time analysis.</p>
-        <a href="fraud-alert.html">Report a Scam</a>
-      </div>
-      <div class="card">
-        <h3>📚 Intercept Archive</h3>
-        <p>See the latest scams stopped by BlackGrid’s defence mesh.</p>
-        <a href="fraudwatch_console.html">View Archive</a>
-      </div>
-      <div class="card">
-        <h3>📊 Trust Score</h3>
-        <p>Check your trust fingerprint based on your digital behaviours.</p>
-        <a href="trust-score.html">Check Score</a>
-      </div>
-      <div class="card">
-        <h3>🧬 Trust DNA</h3>
-        <p>Visualise behavioural and session fingerprint drift in real-time.</p>
-        <a href="trust-dna.html">Run DNA Check</a>
-      </div>
-      <div class="card">
-        <h3>🌐 Phase 5 Modules</h3>
-        <a href="clone-detection.html">🧬 Clone Detection</a><br>
-        <a href="dark-web-scanner.html">🌑 Dark Web Scanner</a><br>
-        <a href="public-defcon-badge.html">🛡️ DEFCON Badge</a><br>
-        <a href="partner-wall.html">🏛️ Honour Wall</a>
+    <h2>Learning Hub</h2>
+
+    <div class="level-block">
+      <h3>Level 1 – Defend Yourself</h3>
+      <div class="sub-tier-list">
+        <a href="/learning/level1-1.html">1.1 The Trick Test</a>
+        <a href="/learning/level1-2.html">1.2 The Stranger Shuffle</a>
+        <a href="/learning/level1-3.html">1.3 The Red Flag Rally</a>
       </div>
     </div>
-  </div>
 
-  <footer>
-    &copy; 2025 BlackGrid. Quantum Mesh Trust Layer. Sovereign Hosted. DEFCON Synced.
-  </footer>
+    <div class="level-block">
+      <h3>Level 2 – Defend Your Family</h3>
+      <div class="sub-tier-list">
+        <a href="/learning/level2-1.html">2.1 Inbox Invaders</a>
+        <a href="/learning/level2-2.html">2.2 Voice of the Faker</a>
+        <a href="/learning/level2-3.html">2.3 Fake Site Frenzy</a>
+      </div>
+    </div>
+
+    <div class="level-block">
+      <h3>Level 3 – Defend Your Workplace</h3>
+      <div class="sub-tier-list">
+        <a href="/learning/level3-1.html">3.1 The Impersonator’s Invoice</a>
+        <a href="/learning/level3-2.html">3.2 The Gift Card Gambit</a>
+        <a href="/learning/level3-3.html">3.3 Trust Breakdown</a>
+      </div>
+    </div>
+
+    <div class="level-block">
+      <h3>Level 4 – Defend the Network</h3>
+      <div class="sub-tier-list">
+        <a href="/learning/level4-1.html">4.1 SIM Clone Showdown</a>
+        <a href="/learning/level4-2.html">4.2 DNS Trap Maze</a>
+        <a href="/learning/level4-3.html">4.3 Credential Chaos</a>
+      </div>
+    </div>
+
+    <div class="level-block">
+      <h3>Level 5 – Defend the Nation</h3>
+      <div class="sub-tier-list">
+        <a href="/learning/level5-1.html">5.1 The Deepfake Directive</a>
+        <a href="/learning/level5-2.html">5.2 Exploit Tree Trials</a>
+        <a href="/learning/level5-3.html">5.3 The AI Adversary Gauntlet</a>
+      </div>
+    </div>
+
+    <div class="back-home">
+      <a href="/">← Back to Home</a>
+    </div>
+  </div>
 </body>
 </html>
