@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Level 1.1 – The Trick Test | FraudWatch Learning Engine</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Rajdhani', sans-serif;
+      background: linear-gradient(to right, #0e0e0e, #1a1a1a);
+      color: #e0e0e0;
+    }
+    header {
+      background-color: #000;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #444;
+    }
+    header h1 {
+      color: #00fff7;
+      font-size: 2rem;
+    }
+    nav a {
+      color: #ccc;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #00fff7;
+    }
+    .container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: #111;
+      border-radius: 10px;
+      border: 1px solid #333;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00fff7;
+      margin-bottom: 1rem;
+    }
+    .question {
+      margin-bottom: 2rem;
+    }
+    .question h3 {
+      margin-bottom: 0.5rem;
+      color: #00fff7;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+    }
+    .answers input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background: #00fff7;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 2rem;
+    }
+    .submit-btn:hover {
+      background: #00cfc7;
+    }
+    .result {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #00fff7;
+      text-align: center;
+    }
+    .score {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+    .back-home {
+      text-align: center;
+      padding: 2rem;
+    }
+    .back-home a {
+      color: #00fff7;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FraudWatch</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/signup">Signup</a>
+      <a href="/cert-mint">Certificates</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Level 1.1 – The Trick Test</h2>
+    <p style="text-align:center; color:#ccc">Spot the emotional triggers, refund baits, and 'too good to be true' traps.</p>
+
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. Which of these phrases is a common scam signal?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q1" value="wrong"> “We're updating our system, please verify.”</label>
+          <label><input type="radio" name="q1" value="wrong"> “This is a courtesy check from your provider.”</label>
+          <label><input type="radio" name="q1" value="correct"> “Act now or your account will be closed!”</label>
+          <label><input type="radio" name="q1" value="wrong"> “Reminder to check your preferences.”</label>
+        </div>
+      </div>
+      <button class="submit-btn" type="submit">Submit Answers</button>
+    </form>
+
+    <div class="result" id="resultMsg"></div>
+    <div class="score" id="scoreCount"></div>
+  </div>
+
+  <div class="back-home">
+    <a href="/">← Back to Home</a>
+  </div>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const answers = document.querySelectorAll("input[type=radio]:checked");
+      let correct = 0;
+      answers.forEach(a => {
+        if (a.value === "correct") correct++;
+      });
+      const total = 1;
+      const pass = 4;
+      document.getElementById("scoreCount").innerText = `You scored ${correct}/${total}`;
+      if (correct >= pass) {
+        document.getElementById("resultMsg").innerText = "✅ Passed! Level 1.2 unlocked.";
+      } else {
+        document.getElementById("resultMsg").innerText = "❌ Not quite. Review the traps and try again.";
+      }
+    });
+  </script>
+
+  <footer>
+    <p style="text-align:center; padding:2rem; color:#555">&copy; 2025 FraudWatch by BlackGrid™ — Level 1.1 Sub-Tier Engine</p>
+  </footer>
+</body>
+</html>
