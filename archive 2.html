@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intercept Archive – FraudWatch</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Rajdhani', sans-serif;
+      background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+      color: #e0e0e0;
+    }
+    header {
+      background-color: #000;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #444;
+    }
+    header h1 {
+      font-size: 2rem;
+      color: #00fff7;
+    }
+    nav a {
+      color: #ccc;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #00fff7;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+      color: #00fff7;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.3s, border 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+      border-color: #00fff7;
+    }
+    .card h4 {
+      color: #00fff7;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+    .date {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+    .back-home {
+      text-align: center;
+      padding: 1rem;
+    }
+    .back-home a {
+      color: #00fff7;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 2rem;
+      color: #555;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FraudWatch</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/defcon">DEFCON</a>
+      <a href="/cert-mint">Certificates</a>
+      <a href="/clone-grid">Clone Grid</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Intercept Archive</h2>
+    <div class="grid">
+      <div class="card">
+        <h4>⚠️ NHS Invoice Scam</h4>
+        <p>Detected phishing email targeting NHS procurement teams with fake remittance requests.</p>
+        <div class="date">14 July 2025 – Source: BlackGrid Intercept Node #341</div>
+      </div>
+      <div class="card">
+        <h4>💸 Grant Payment Clone Site</h4>
+        <p>Fake gov.uk clone detected tricking users into applying for non-existent COVID relief grants.</p>
+        <div class="date">13 July 2025 – Source: Watchtower AI Radar</div>
+      </div>
+      <div class="card">
+        <h4>🪙 Crypto Wallet Drain App</h4>
+        <p>Android app sideload warning: auto-drains connected wallets using social-engineered permission grants.</p>
+        <div class="date">13 July 2025 – Source: AppScan Node B</div>
+      </div>
+      <div class="card">
+        <h4>📧 Council Tax Refund Bait</h4>
+        <p>Email campaign targeting elderly with fraudulent 'refund' pages to harvest identity and bank info.</p>
+        <div class="date">12 July 2025 – Source: ElderShield Flag #212</div>
+      </div>
+      <div class="card">
+        <h4>🎓 School Supply Invoice Trap</h4>
+        <p>Fake supplier email targeting UK school bursars, requesting urgent payment on fake items.</p>
+        <div class="date">11 July 2025 – Source: SectorMesh Education Node</div>
+      </div>
+      <div class="card">
+        <h4>📲 SIM Porting Exploit</h4>
+        <p>Detected real-time SIM swap social engineering attempt via telecom portal impersonation.</p>
+        <div class="date">10 July 2025 – Source: TelGrid Module 2</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-home">
+    <a href="/">← Back to Home</a>
+  </div>
+
+  <footer>
+    &copy; 2025 FraudWatch by BlackGrid™ — Intercept Archive System
+  </footer>
+</body>
+</html>
