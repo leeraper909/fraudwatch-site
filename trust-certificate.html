@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trust Certificate Generator | FraudWatch</title>
+  <style>
+    body { font-family: sans-serif; background: #f9fafb; padding: 2rem; text-align: center; }
+    h1 { color: #0f62fe; }
+    input { padding: 0.75rem; width: 300px; border: 1px solid #ccc; border-radius: 5px; margin-top: 1rem; }
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #0f62fe;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .certificate {
+      margin-top: 2rem;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    code { font-family: monospace; font-size: 0.85rem; color: #555; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <h1>🎖️ Generate Your BlackGrid Trust Certificate</h1>
+  <p>Enter your name to mint a timestamped, verifiable certificate of trust completion.</p>
+
+  <input id="name" placeholder="Your Full Name" />
+  <br />
+  <button onclick="mintCertificate()">Mint Certificate</button>
+
+  <div id="certBox" class="certificate" style="display:none">
+    <h2>✅ BlackGrid Trust Certificate</h2>
+    <p>This certifies that:</p>
+    <h3 id="certName"></h3>
+    <p>has successfully completed fraud defence learning under the BlackGrid Trust Ladder system.</p>
+    <p><strong>Issued:</strong> <span id="timestamp"></span></p>
+    <p><strong>Certificate ID:</strong></p>
+    <code id="hash"></code>
+  </div>
+
+  <script>
+    function mintCertificate() {
+      const name = document.getElementById("name").value.trim();
+      if (!name) return alert("Please enter your full name");
+      const now = new Date();
+      const stamp = now.toISOString();
+      const certHash = btoa(name + stamp).slice(0, 16) + "..." + btoa(name + stamp).slice(-8);
+      document.getElementById("certName").innerText = name;
+      document.getElementById("timestamp").innerText = stamp;
+      document.getElementById("hash").innerText = certHash;
+      document.getElementById("certBox").style.display = "block";
+    }
+  </script>
+</body>
+</html>
