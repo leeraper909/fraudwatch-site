@@ -1,0 +1,1 @@
+// Scam Radar visual logic
