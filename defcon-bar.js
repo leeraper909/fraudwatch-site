@@ -1,1 +1,0 @@
-// DEFCON bar visual logic
